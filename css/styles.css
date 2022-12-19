@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background: rgb(0, 0, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transition: 0.5s ease;
+}
+
+header.sticky {
+  background: black;
+  padding: 10px 100px;
+}
+
+header .brand {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.brand:hover {
+  color: white;
+}
+header .navigation {
+  position: relative;
+}
+
+header .navigation a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.5s ease;
+}
+
+header .navigation a:hover {
+  color: #666;
+}
+
+.main {
+  background: url("../images/bg-home.png") no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 93%, 0% 100%);
+}
+.content > h1,
+p {
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section-title {
+  position: relative;
+  color: rgb(40, 140, 255);
+  text-align: center;
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  width: 140px;
+  height: 4px;
+  background: rgb(40, 140, 255);
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(40, 140, 255);
+  transform: translateX(-50%);
+}
+
+.linkToSpread {
+  text-decoration: none;
+  padding: 15px;
+  margin: 5px;
+  background: #000;
+  border-radius: 10px;
+  width: max-content;
+}
+.servicesDiv {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+.form > textarea {
+  resize: none;
+  height: 100px;
+}
+.about,
+.services,
+.connect {
+  min-height: 100vh;
+}
+.cardOfServices {
+  margin: 20px;
+}
+.card-body > p {
+  font-weight: 250;
+}
+.containerr {
+  width: 80%;
+  margin: 0 auto;
+}
+.videoAboutServices {
+  width: 100%;
+  background: url("../images/bg-asteach.jpg");
+  height: 200px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1049px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  a.brand {
+    font-size: larger;
+  }
+  header.sticky {
+    padding: 10px 20px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    z-index: 888;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+    transition: 0.3s ease;
+  }
+
+  header .navigation a {
+    color: #000;
+    font-size: 22px;
+    margin: 10px;
+    padding: 0 20px;
+    border-radius: 20px;
+  }
+
+  header .navigation a:hover {
+    background: crimson;
+    color: #fff;
+  }
+
+  .menu-btn {
+    position: absolute;
+    background: url(https://savlatbeks-portfolio.netlify.app/../images/menu.png)
+      no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+
+  .menu-btn.active {
+    z-index: 999;
+    background: url(https://savlatbeks-portfolio.netlify.app/../images/close.png)
+      no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+    filter: invert(1);
+  }
+}
+@media (max-width: 500px) {
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    background-position: center;
+  }
+  .contentOfAbout {
+    width: 50%;
+    margin: 0;
+    margin: 0 auto;
+  }
+  .containerr {
+    width: 100%;
+  }
+  .servicesDiv {
+    display: inline-block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+  }
+  .cardOfServices {
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+  }
+}
