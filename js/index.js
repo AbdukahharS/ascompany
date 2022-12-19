@@ -38,23 +38,25 @@ window.addEventListener('DOMContentLoaded', () => {
   const re =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-  btn.addEventListener('click', (e) => {
-    if (name.value == '' || email.value == '' || message.value == '') {
-      alertBox.classList.add('d-block')
-      alertBox.classList.remove('d-none')
-      alertBox.textContent = 'Nimadir kiritilmagan'
-      e.preventDefault()
-    } else if (!re.test(email.value)) {
-      alertBox.classList.add('d-block')
-      alertBox.classList.remove('d-none')
-      alertBox.textContent = 'Email xato!'
-      e.preventDefault()
-    } else {
-      alertBox.classList.add('d-block')
-      alertBox.classList.remove('d-none')
-      alertBox.classList.remove('alert-danger')
-      alertBox.classList.add('alert-success')
-      alertBox.textContent = 'Xabar yuborilmoqda'
-    }
-  })
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      if (name.value == '' || email.value == '' || message.value == '') {
+        alertBox.classList.add('d-block')
+        alertBox.classList.remove('d-none')
+        alertBox.textContent = 'Nimadir kiritilmagan'
+        e.preventDefault()
+      } else if (!re.test(email.value)) {
+        alertBox.classList.add('d-block')
+        alertBox.classList.remove('d-none')
+        alertBox.textContent = 'Email xato!'
+        e.preventDefault()
+      } else {
+        alertBox.classList.add('d-block')
+        alertBox.classList.remove('d-none')
+        alertBox.classList.remove('alert-danger')
+        alertBox.classList.add('alert-success')
+        alertBox.textContent = 'Xabar yuborilmoqda'
+      }
+    })
+  }
 })
